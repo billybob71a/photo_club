@@ -140,7 +140,8 @@ function usp_login_form() {
 						<input name="user_email" id="user_email" type="text" value="">
 					</div>
 					<?php $usp_options = get_option('usp_options'); ?>
-					 <?php if (isset($usp_options['recaptcha_public'])) {error_log("Hi there");} else {error_log("Bye All");} ?>					
+					 <?php if (isset($usp_options['recaptcha_public'])) {error_log("Hi there");} else {error_log("Bye All");} ?>
+                    <div class="login_fields"></div>
 					<div class="login_fields">
 						<input type="submit" name="user-submit" value="<?php esc_attr_e('Sign up!', 'usp-pro'); ?>" class="user-submit">
 						<input type="hidden" name="redirect_to" value="<?php echo $redirect_register; ?>">

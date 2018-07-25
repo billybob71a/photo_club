@@ -140,6 +140,9 @@ function usp_login_form() {
 						<input name="user_email" id="user_email" type="text" value="">
 					</div>
 					<?php $usp_options = get_option('usp_options'); ?>
+                    /*
+                    PeterY: The following recaptcha works
+                    */
 					 <?php if (isset($usp_options['recaptcha_public'])) {?><div class="g-recaptcha" data-sitekey="6LeJ9VsUAAAAADBWiTEjBQ2W3bWJ_ZPJKmJLJc8N"></div><?php ;} else {error_log("Bye All");} ?>
                     <div class="login_fields"></div>
 					<div class="login_fields">

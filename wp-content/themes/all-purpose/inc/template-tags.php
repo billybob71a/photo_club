@@ -44,8 +44,12 @@ function all_purpose_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$ap_categories_list = get_the_category_list( esc_html__( ', ', 'all-purpose' ) );
+		$ap_categories_list_no_link = preg_match("#>(.*)<#", $ap_categories_list, $matches);
+		print("Division: ".$matches[1]);
 		if ( $ap_categories_list && all_purpose_categorized_blog() ) {
-			printf( '<i class="fa fa-folder-open"></i> <span class="cat-links">' . esc_html__( ' Posted in %1$s ', 'all-purpose' ) . ' </span>', $ap_categories_list ); // WPCS: XSS OK.
+			// Line commented out by PeterY
+			//printf($ap_categories_list);
+			//printf( '<i class="fa fa-folder-open"></i> <span class="cat-links">' . esc_html__( ' Posted in %1$s ', 'all-purpose' ) . ' </span>', $ap_categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */

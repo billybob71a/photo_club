@@ -18,7 +18,7 @@ get_header(); ?>
 				?>
 				
 				<div class="postpagination">
-					<?php the_post_navigation(); ?>
+					<!--Commented out by PeterY <?php the_post_navigation(); ?> -->
 				</div>
 				
 				<?php

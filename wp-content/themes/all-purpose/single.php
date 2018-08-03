@@ -19,8 +19,9 @@ get_header(); ?>
 				
 				<div class="postpagination">
 					<!--Commented out by PeterY <?php the_post_navigation(); ?> -->
+					<?php if (function_exists('the_post_navigation')) {printf('Delete this post');} ?>
 				</div>
-				
+				<?php if (function_exists('the_post_navigation()')) printf('hi'); ?>
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :

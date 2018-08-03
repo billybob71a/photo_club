@@ -19,7 +19,8 @@ get_header(); ?>
 				
 				<div class="postpagination">
 					<!--Commented out by PeterY <?php the_post_navigation(); ?> -->
-					<?php if (function_exists('get_delete_post_link')) {printf('Delete this post');} ?>
+					<?php if (function_exists('get_delete_post_link')) {
+					    echo ('<p><a href="<?php echo get_delete_post_link( $post->ID ) ?>">Delete post</a></p>');} ?>
 				</div>
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.

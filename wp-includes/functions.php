@@ -6,6 +6,40 @@
  */
 
 require( ABSPATH . WPINC . '/option.php' );
+/**
+PeterY Custom function to delete posts
+But the following was not used because I added the "User Role" Plugin later on
+function add_subscriber_delete_cap() {
+    $role = get_role( 'subscriber' );
+    $role->add_cap( 'delete_posts' );
+    $role->add_cap( 'delete_published_posts' );
+    $role->add_cap( 'delete_pages' );
+    $role->add_cap( 'delete_published_pages' );
+}
+add_action( 'admin_init', 'add_subscriber_delete_cap');
+*/
+/**
+adding the ability to remove link
+*/
+function remove_admin_bar_links() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('wp-logo');          // Remove the Wordpress logo
+    $wp_admin_bar->remove_menu('about');            // Remove the about Wordpress link
+    $wp_admin_bar->remove_menu('wporg');            // Remove the Wordpress.org link
+    $wp_admin_bar->remove_menu('documentation');    // Remove the Wordpress documentation link
+    $wp_admin_bar->remove_menu('support-forums');   // Remove the support forums link
+    $wp_admin_bar->remove_menu('feedback');         // Remove the feedback link
+    $wp_admin_bar->remove_menu('site-name');        // Remove the site name menu
+    $wp_admin_bar->remove_menu('view-site');        // Remove the view site link
+    $wp_admin_bar->remove_menu('updates');          // Remove the updates link
+    $wp_admin_bar->remove_menu('comments');         // Remove the comments link
+    $wp_admin_bar->remove_menu('new-content');      // Remove the content link
+    $wp_admin_bar->remove_menu('w3tc');             // If you use w3 total cache remove the performance link
+    $wp_admin_bar->remove_menu('edit-profile');    // Remove edit profile
+    $wp_admin_bar->remove_menu('my-account-with-avator'); // Remove the link with Avatar
+    $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
 /**
  * Convert given date string into a different format.

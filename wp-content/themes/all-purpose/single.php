@@ -19,8 +19,8 @@ get_header(); ?>
 				
 				<div class="postpagination">
 					<!--Commented out by PeterY <?php the_post_navigation(); ?> -->
-					<?php if (function_exists('get_delete_post_link')) {
-					    esc_html_e('<p><a onclick="return confirm("are you sure?")" href="<?php echo get_delete_post_link( $post->ID ) ?>">Delete post</a></p>');} ?>
+					<p><a onclick='return confirm("are you sure?")' href="<?php echo get_delete_post_link( $post->ID ) ?>">Delete post</a></p>
+				<?php echo($post->ID) ?>
 				</div>
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.

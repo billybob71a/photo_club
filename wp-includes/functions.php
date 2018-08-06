@@ -40,6 +40,22 @@ function remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+/**
+// Add CSS to hide everything in the admin while the JS above does it's trick
+add_action('admin_head', 'hide_admin_via_css');
+function hide_admin_via_css() {
+	if (!current_user_can( 'manage_options' )) {
+		echo '<style>body * {visibility:hidden !important;} body:before {content:"Give it a second...";}';
+	}
+}
+/**
+//the following will redirect
+function my_enqueue( $hook ) {
+	if (!current_user_can( 'manage_options' )) {
+	    wp_enqueue_script( 'my_custom_script', '/wp-content/themes/all-purpose/block-admin.js' );
+	}
+}
+add_action('admin_enqueue_scripts', 'my_enqueue');
 
 /**
  * Convert given date string into a different format.

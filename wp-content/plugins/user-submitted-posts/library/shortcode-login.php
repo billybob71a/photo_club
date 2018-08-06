@@ -179,9 +179,9 @@ function usp_login_form() {
 			<div class="user-info">
 				<p><?php esc_html_e('Congratulations, you&rsquo;re logged in.', 'usp-pro'); ?></p>
 				<p>
-					<a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php esc_html_e('Log out', 'usp-pro'); ?></a><span class="usp-sep"> | </span>
+					<a href="<?php echo wp_logout_url(get_permalink()); ?>"><?php esc_html_e('Log out', 'usp-pro'); ?></a><span class="usp-sep"> </span>
 					<?php if (current_user_can('manage_options')) echo '<a href="'. admin_url() .'">'. esc_html__('Admin', 'usp-pro') .'</a>'; 
-					else echo '<a href="'. admin_url() .'profile.php">'. esc_html__('Profile', 'usp-pro') .'</a>'; ?>
+					else echo (''); ?>
 				</p>
 			</div>
 		</div>

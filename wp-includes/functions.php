@@ -38,6 +38,7 @@ function remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('edit-profile');    // Remove edit profile
     $wp_admin_bar->remove_menu('my-account-with-avator'); // Remove the link with Avatar
     $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
+    $wp_admin_bar->remove_menu('search');       // Remove the user details tab
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 /**
